@@ -5,6 +5,22 @@ A collection of custom nodes for ComfyUI
 > [!NOTE]
 > This projected was created with a [cookiecutter](https://github.com/Comfy-Org/cookiecutter-comfy-extension) template. It helps you start writing custom nodes without worrying about the Python setup.
 
+## Workflow
+```
+[Load Image: source_fullgi] ─┬─→ [EbSynth Guide (weight=0.66)] ─→ guides
+[Load Image: target_fullgi] ─┘                                      │
+                                                                    ↓
+[Load Image: source_dirdif] ─┬─→ [EbSynth Guide (weight=0.66)] ←────┘
+[Load Image: target_dirdif] ─┘           │
+                                         ↓ guides
+[Load Image: source_indirb] ─┬─→ [EbSynth Guide (weight=0.66)] ←────┘
+[Load Image: target_indirb] ─┘           │
+                                         ↓ guides
+[Load Image: style] ─────────────→ [EbSynth Transfer] ─→ output
+```
+
+
+
 ## Quickstart
 
 1. Install [ComfyUI](https://docs.comfy.org/get_started).
